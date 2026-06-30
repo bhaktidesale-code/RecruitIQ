@@ -8,25 +8,13 @@ import { api } from "../../lib/api"; // Note: Adjusted to relative path based on
 
 export default function DashboardPage() {
   
-  // --- INVISIBLE HACKATHON AUTO-LOGIN ---
+// AUTHENTICATION CHECK
   useEffect(() => {
-    const autoLogin = async () => {
-      if (!localStorage.getItem('access_token')) {
-        try {
-          const res = await api.post('/auth/login', {
-            email: "judge@hackathon.com",
-            password: "securepassword123"
-          });
-          localStorage.setItem('access_token', res.data.access_token);
-          window.location.reload(); // Refresh once to load the new token
-        } catch (error) {
-          console.error("Auto-login failed:", error);
-        }
-      }
-    };
-    autoLogin();
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+      window.location.href = '/login'; 
+    }
   }, []);
-  // --------------------------------------
 
   const queryClient = useQueryClient();
   const [selectedJobId, setSelectedJobId] = useState<number | null>(null);

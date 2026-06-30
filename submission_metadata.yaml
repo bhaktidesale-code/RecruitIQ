@@ -1,0 +1,53 @@
+# Redrob Hackathon — Submission Metadata
+# Leader: replace all TODO values before final submission.
+
+team_name: "TEAM PRAGYAAN"
+
+primary_contact:
+  name: "BHAKTI DIPAK DESALE"
+  email: "bhaktidd9@gmail.com"
+  phone: "+91-9420616653"
+
+team_members:
+  - name: "SHIVANI KRISHNA RAO"
+    email: "raoshivani1002@gmail.com"
+    role: "DOCUMENTATION"
+  - name: "SANIKA NITIN JADHAV"
+    email: "sanikanjadhav0106@gmail.com"
+    role: "FRONTEND DEVELOPER"
+  - name: "VISHAL VIKAS PATIL"
+    email: "mainvishu.p3213@gmail.com"
+    role: "DATA ENGINEER"
+
+github_repo: "https://github.com/bhaktidesale-code/RecruitIQ"
+
+sandbox_link: "https://bhakti-108-recruitiq-ranker.hf.space"
+
+reproduce_command: "python ranking_engine/ranker.py"
+
+compute:
+  platform: "Local Windows laptop"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.13.4"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "ChatGPT"
+
+ai_usage_summary: |
+  Used ChatGPT for understanding the submission specification, debugging Python/terminal issues, and improving the rule-based ranking approach. No hosted LLM API calls are used inside the ranking code, and candidate ranking runs fully offline on CPU.
+
+methodology_summary: |
+  We built a CPU-only rule-based ranking system for the Senior AI Engineer role. The ranker scores candidates using structured profile fields, career history, relevant AI/ML skills, production retrieval/ranking/search experience, vector database and evaluation-system exposure, location fit, notice period, and Redrob behavioral signals. It gives higher weight to candidates with 5-9 years of experience, Python, embeddings, retrieval, ranking, search, LLM, and product-engineering experience. It down-ranks inactive candidates, low recruiter-response candidates, long notice periods, consulting-only backgrounds, keyword-stuffed profiles, and honeypot-like skill inconsistencies.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
